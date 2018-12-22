@@ -43,7 +43,7 @@ export default class Listview extends Component {
             <RefreshControl 
               refreshing={this.state.refreshing}
               onRefresh={this.loadnewdata.bind(this)}
-             
+              onEndReached={this.loadnewdata.bind(this)}
             />
           }
           dataSource={this.state.dataSource}

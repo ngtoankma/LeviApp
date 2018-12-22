@@ -7,16 +7,29 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import Listview from './src/components/Listview.js';
-
+import SideBar from './src/components/SideBar';
+import Drawer from 'react-native-drawer';
 
 export default class App extends Component {
+  closeControlPanel = () => {
+    this._drawer.close()
+  };
+  openControlPanel = () => {
+    this._drawer.open()
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <Listview/>
-       </View>
+      <Drawer
+      ref={(ref) => this._drawer = ref}
+      openDrawerOffset={70}
+      tapToClose={true}
+      content={<View style={{flex:1,backgroundColor:'yellow'}}></View>}
+      >
+      <TouchableOpacity onPress={()=>{this.openControlPanel()}}><Text>open</Text></TouchableOpacity>
+      <SideBar />
+       </Drawer>
     );
   }
 }
