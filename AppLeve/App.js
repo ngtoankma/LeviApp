@@ -11,6 +11,8 @@ import {Platform, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import Listview from './src/components/Listview.js';
 import SideBar from './src/components/SideBar';
 import Drawer from 'react-native-drawer';
+import Asyncstorage from './src/components/Asyncstorage';
+import TabBar from './src/components/TabBar';
 
 export default class App extends Component {
   closeControlPanel = () => {
@@ -28,7 +30,7 @@ export default class App extends Component {
       content={<View style={{flex:1,backgroundColor:'yellow'}}></View>}
       >
       <TouchableOpacity onPress={()=>{this.openControlPanel()}}><Text>open</Text></TouchableOpacity>
-      <SideBar />
+      <TabBar />
        </Drawer>
     );
   }
