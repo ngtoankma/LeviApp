@@ -1,3 +1,5 @@
+///day la comment nhananaaaaa ahii
+
 import React,{Component} from 'react'; //imp
 import { View,Text,TextInput,Dimensions,TouchableOpacity } from 'react-native'; //imd
 let Dwidth =Dimensions.get('window').width-20;
